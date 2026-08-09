@@ -1,0 +1,41 @@
+name: offline_chess
+description: A fully offline chess app for mobile and desktop.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # Chess rules engine (chess.js port) — move validation, check/mate/stalemate,
+  # castling, en passant, promotion. Do not hand-roll rules.
+  chess: ^0.8.1
+
+  # State management
+  provider: ^6.1.2
+
+  # Local storage
+  shared_preferences: ^2.2.3
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+
+  # Audio for move/capture/check sound effects
+  audioplayers: ^6.0.0
+
+  # On-device Stockfish (added for Stage 3 — bot mode). Included in pubspec
+  # now so you only need to run `flutter pub get` once.
+  stockfish: ^1.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/
